@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch11 表單練習(JavaScript)</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mycss01.css">
+</head>
+
+<body class="bg-light">
+    <div class="container pt-5">
+        <div class="row justify-content-center" id="s01">
+            <div class="display-4 fw-900 text-center text-bg-warning py-2">綠茶產品建檔</div>
+            <div class="col-md-6 mt-3">
+                <div class="mb-3 form-floating">
+                    <input type="text" class="form-control form-control-lg" name="" id="pname" list="greentea"
+                        placeholder="">
+                    <label for="pname" class="form-label">產品名稱(種類)</label>
+                    <datalist id="greentea">
+                        <option value="茉香綠茶"></option>
+                        <option value="泡沫綠茶"></option>
+                        <option value="冷萃綠茶"></option>
+                    </datalist>
+                    <div class="valid-feedback">產品名稱符合規定</div>
+                    <div class="invalid-feedback">產品名稱不符合規定</div>
+                </div>
+                <div class="mb-3">
+                    <label for="pnum" class="form-label">數量(1~10)</label>
+                    <input type="number" class="form-control form-control-lg" min="1" max="10" id="pnum"
+                        placeholder="請輸入數量">
+                    <div class="valid-feedback">數量符合規定</div>
+                    <div class="invalid-feedback">數量不符合規定</div>
+                </div>
+                <!-- 使用Datalist 做出 產品簡介(規格。備註)..... -->
+                <div class="mb-3">
+                    <label for="pstandard" class="form-label">產品規格</label>
+                    <input type="text" class="form-control form-control-lg" id="pstandard" list="datalistoption"
+                        placeholder="選擇容器">
+                    <datalist id="datalistoption">
+                        <option value="罐裝"></option>
+                        <option value="瓶裝"></option>
+                        <option value="散裝"></option>
+                    </datalist>
+                    <div class="valid-feedback">產品規格符合規定</div>
+                    <div class="invalid-feedback">產品規格不符合規定</div>
+                </div>
+
+                <div class="mb-3">
+                    <select name="" id="psize" class="form-select form-select-lg is-invalid">
+                        <option value="" disabled selected class="text-center fw-900">請選擇容量</option>
+                        <option value="特大(1000cc以上)">特大(1000cc以上)</option>
+                        <option value="大(700-1000cc)">大(700-1000cc)</option>
+                        <option value="中(500-700cc)">中(500-700cc)</option>
+                        <option value="小(500cc以下)">小(500cc以下)</option>
+                    </select>
+                    <div class="valid-feedback">已選擇容量</div>
+                    <div class="invalid-feedback">請選擇容量</div>
+                </div>
+
+                <div class="mb-3 form-check form-switch">
+                    <input type="checkbox" name="" id="pstatus" class="form-check-input" checked>
+                    <label for="" class="form-check-label" id="pstatus_text">目前狀態:有貨
+                    </label>
+                </div>
+
+                <div class="mb-3">
+                    <div class="from-label fw-900">可加糖:至少要加一個</div>
+                    <div id="topping_group" class="is-invalid">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input topping_item" value="方糖">
+                            <label for="" class="form-check-label">方糖</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input topping_item" value="果糖">
+                            <label for="" class="form-check-label">果糖</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input topping_item" value="砂糖">
+                            <label for="" class="form-check-label">砂糖</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input topping_item" value="蔗糖">
+                            <label for="" class="form-check-label">蔗糖</label>
+                        </div>
+                    </div>
+                    <div class="valid-feedback">已選擇糖的種類</div>
+                    <div class="invalid-feedback">至少加一種糖(可複選)</div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="from-label fw-900">供應方式:請選擇一項</div>
+                    <div id="supply_group" class="is-invalid">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-check-input supply_item" name="supply" value="冷飲">
+                            <label for="" class="form-check-label">冷飲</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-check-input supply_item" name="supply" value="常溫">
+                            <label for="" class="form-check-label">常溫</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-check-input supply_item" name="supply" value="熱飲">
+                            <label for="" class="form-check-label">熱飲</label>
+                        </div>
+                    </div>
+
+                    <div class="valid-feedback">已選擇供應</div>
+                    <div class="invalid-feedback">未選擇供應方式</div>
+                </div>
+
+                <div class="text-end mt-4">
+                    <button class="btn btn-secondary">取消</button>
+                    <button class="btn btn-primary" id="ok_btn">確認</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5 justify-content-center d-none" id="s02">
+            <div class="display-5 fw-900 text-center text-bg-success py-2 rounded-3">產品建檔-明細確認</div>
+            <div class="col-md-6 p-3">
+                <div id="showmessage"></div>
+                <button class="btn btn-danger mt-3 w-100">取消</button>
+                <button class="btn btn-warning mt-3 w-100">確認送出</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        let flag_pname = false;
+        let flag_pnum = false;
+        let flag_pstandard = false;
+        let flag_size = false;
+        let flag_topping = false;
+        let flag_supply = false;
+        $(function () {
+            //監聽#pname
+            $("#pname").on("input", function () {
+                console.log($(this).val().length);
+                let pname = $(this).val().trim();
+
+                if (pname.length >= 1 && pname.length <= 6) {
+                    //符合規定
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_pname = true;
+                } else {
+                    //不符合規定
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_pname = false;
+                }
+            });
+
+            //監聽#pnum 數字記得使用 Number()
+            $("#pnum").on("input", function () {
+                console.log($(this).val());
+
+                let pnum = Number($(this).val());
+                if (pnum >= 1 && pnum <= 10) {
+                    //符合規定
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_pnum = true;
+                } else {
+                    //不符合規定
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_pnum = false;
+                }
+            });
+
+            //監聽#pstandard
+            $("#pstandard").on("input", function () {
+                console.log($(this).val());
+                let pstandard = $(this).val().trim();
+
+                if (pstandard.length >= 1 && pstandard.length <= 6) {
+                    //符合規定
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_pstandard = true;
+                } else {
+                    //不符合規定
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_pstandard = false;
+                }
+            });
+
+            //監聽#psize
+            $("#psize").on("change", function () {
+                console.log($(this).val());
+                let psize = $(this).val().trim();
+                if (psize != "") {
+                    //符合規定
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_size = true;
+                } else {
+                    //不符合規定
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_size = false;
+                }
+            });
+
+            //監聽#pstatus
+            $("#pstatus").on("change", function () {
+                console.log($(this).prop("checked"));
+
+                let pstatus = $(this).prop("checked");
+                if (pstatus) {
+                    $("#pstatus_text").text("目前狀態: 有貨");
+                } else {
+                    $("#pstatus_text").text("目前狀態: 售完");
+                }
+            });
+
+            //監聽.topping_item
+            $(".topping_item").on("change", function () {
+                console.log($(".topping_item:checked").length);
+                let count = $(".topping_item:checked").length;
+                if (count > 0) {
+                    $("#topping_group").removeClass("is-invalid");
+                    $("#topping_group").addClass("is-valid");
+
+                    flag_topping = true;
+                } else {
+                    $("#topping_group").removeClass("is-valid");
+                    $("#topping_group").addClass("is-invalid");
+
+                    flag_topping = false;
+                }
+            });
+
+            //監聽.supply_item
+            $(".supply_item").on("change", function () {
+                console.log($(".supply_item:checked").val());
+                let supply = $(".supply_item:checked").val();
+                if (supply != undefined) {
+                    $("#supply_group").removeClass("is-invalid");
+                    $("#supply_group").addClass("is-valid");
+
+                    flag_supply= true;
+                } else {
+                    $("#supply_group").removeClass("is-valid");
+                    $("#supply_group").addClass("is-invalid");
+
+                    flag_supply = false;
+                }
+            });
+
+            //按鈕監聽 #ok_btn
+            $("#ok_btn").on("click", function () {
+                if (flag_pname && flag_pnum && flag_pstandard && flag_size && flag_topping && flag_supply) {
+                    //顯示飲料產品建檔 - 明細確認
+                    $("#s02").removeClass("d-none");
+
+                    //三元運算子
+                    let pstatus = $("#pstatus").prop("checked") ? "有貨" : "售完";
+
+                    //收集可加配料
+                    let toppingArray = [];
+                    $(".topping_item:checked").each(function () {
+                        console.log($(this).val());
+                        toppingArray.push($(this).val());
+                    });
+                    console.log(toppingArray);
+
+                    //供應方式
+                    let supply = $(".supply_item:checked").val()
+
+
+                    let strHTML = `<h4>產品名稱: ${$("#pname").val()}</h4>
+                                    <h4>產品數量: ${$("#pnum").val()}</h4>
+                                    <h4>產品規格: ${$("#pstandard").val()}</h4>
+                                    <h4>產品尺寸: ${$("#psize").val()}</h4>
+                                    <h4>目前狀態: ${pstatus}</h4>
+                                    <h4>選取糖的種類: ${toppingArray.join("/")}</h4>
+                                    <h4>供應方式: ${supply}</h4>`;
+                    $("#showmessage").html(strHTML);
+                } else {
+                    Swal.fire({
+                        title: "欄位錯誤?",
+                        text: "欄位錯誤，請修正。",
+                        icon: "error"
+                    });
+                    $("#s02").addClass("d-none");
+                }
+
+            });
+        });
+    </script>
+</body>
+
+</html>

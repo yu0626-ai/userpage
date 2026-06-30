@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人首頁</title>
+    <link rel="stylesheet" href="css/my.css">
+    <style>
+        :root {
+            /* Brand */
+            --color-primary: #3B82F6;
+            /* VictoryBlue */
+            --color-secondary: #8B5CF6;
+            /* EnergyPurple */
+
+            /* Background */
+            --bg-primary: #0F172A;
+            /* DeepArena */
+            --bg-secondary: #1E293B;
+            /* ShadowField */
+
+            /* Text */
+            --text-primary: #F8FAFC;
+            /* CrystalWhite */
+            --text-secondary: #94A3B8;
+            /* SilverMist */
+        }
+
+        body {
+            background-color: var(--color-primary);
+        }
+
+        .s01 {
+            background-color: var(--bg-secondary);
+            height: 100vh;
+            position: relative;
+        }
+
+        .s01 .box01 {
+            background-color: var(--color-secondary);
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .s01 .box02 {
+            background-color: var(--color-secondary);
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .s01 .box03 {
+            background-color: var(--color-secondary);
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+        .s01 .box04 {
+            height: 200px;
+            width: 200px;
+            background-color: var(--color-secondary);
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        .s01 .userimg {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            bottom: 100px;
+            right: 100px;
+            background-color: var(--bg-primary);
+            background-image: url(img/people.avif);
+            background-position: center center;
+            background-size:cover ;
+            border-radius: 15px;
+            box-shadow: 2px 2px 2px 2px var(--bg-primary);
+        }
+        .usertext{
+            position: absolute;
+            top: 17%;
+            left: 10%;
+            right: 30%;
+        }
+        /* s02作品區 */
+        .s02{
+            padding: 80px 10%;
+            background-color: aqua;
+            text-align: center;
+        }
+        .s02 h2{
+            font-size: 36px;
+        }
+        .s02 .card{
+            display: inline-block;
+            margin: 15px;
+            width: 240px;
+            background-color: rgb(138, 103, 61);
+            padding: 20px;
+            text-align: left;
+            border-radius: 12px;
+        }
+        .s02 .card h3{
+            color: var(--text-primary);
+            margin-top: 0;
+        }
+        .s02 .card p{
+            line-height: 1.7;
+            color: var(--text-secondary);           
+}
+
+    </style>
+</head>
+
+<body>
+    <section class="s01">
+        <div class="box01"></div>
+        <div class="box02"></div>
+        <div class="box03"></div>
+        <div class="box04"></div>
+        <div class="userimg"></div>
+        <div class="usertext">
+            <h1>xxx履歷</h1>
+            <hr>
+            <h2>應徵職位:工程師</h2>
+            <p>配件操作系統策略，這時學校有很多，隨着始終水溝全國站點厲害盯着男性取消創業碩士站內原則本地下載。</p>
+        </div>
+    </section>
+    <section class="s02">
+        <h2>我的作品</h2>
+        <!-- 作品01 -->
+        <div class="card">
+            <h3>切版練習</h3>
+            <p>使用html css 練習切版</p>
+            <a href="0527-1.html" target="_blank">查看作品</a>
+        </div>
+        <!-- 作品02 -->
+        <div class="card">
+            <h3>購物網站</h3>
+            <p>使用html css javascript 製作展示頁面</p>
+            <a href="#">查看作品</a>
+        </div>
+        <!-- 作品03 -->
+        <div class="card">
+            <h3>購物網站</h3>
+            <p>使用html css javascript 製作展示頁面</p>
+            <a href="#">查看作品</a>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+
+:root {
+            /* Brand */
+            --color-primary: #3B82F6;
+            /* VictoryBlue */
+            --color-secondary: #8B5CF6;
+            /* EnergyPurple */
+
+            /* Background */
+            --bg-primary: #0F172A;
+            /* DeepArena */
+            --bg-secondary: #1E293B;
+            /* ShadowField */
+
+            /* Text */
+            --text-primary: #F8FAFC;
+            /* CrystalWhite */
+            --text-secondary: #94A3B8;
+            /* SilverMist */
+        }
+        .fw-100{
+            font-weight: 100;
+        }
+        .fw-200{
+            font-weight: 200;
+        }
+        .fw-300{
+            font-weight: 300;
+        }
+        .fw-400{
+            font-weight: 400;
+        }
+        .fw-500{
+            font-weight: 500;
+        }
+        .fw-600{
+            font-weight: 600;
+        }
+        .fw-700{
+            font-weight: 700;
+        }
+        .fw-800{
+            font-weight: 800;
+        }
+        .fw-900{
+            font-weight: 900;
+        }
+        /* 字體顏色 */
+        .btn-text-primary{
+            color: var(--text-primary);
+        }
+        .btn-text-secondary{
+            color: var(--text-secondary);
+        }
